@@ -1,7 +1,7 @@
 # api-clinica
 Api para uma clinica de saúde
 
-Projeto desenvolvido usando Java juntamente com Spring-Boote e MySql.
+Projeto desenvolvido usando Java juntamente com Spring-Boot e MySql.
 
 Até o momento a API tem as seguintes funcionalidade:
 Cadastro de médicos;
