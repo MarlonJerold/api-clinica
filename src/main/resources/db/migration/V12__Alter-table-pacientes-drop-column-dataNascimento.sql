@@ -1,0 +1,1 @@
+ALTER TABLE pacientes DROP COLUMN dataNascimento;

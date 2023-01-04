@@ -1,0 +1,1 @@
+ALTER TABLE pacientes ADD data_nascimento DATE;

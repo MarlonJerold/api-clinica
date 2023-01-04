@@ -1,30 +1,41 @@
-package med.vol.api.medico;
+package med.vol.api.paciente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.vol.api.endereco.DadosEndereco;
-import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CPF;
 
-public record DadosCadastradoMedico(
+import java.text.DateFormat;
 
+
+public record DadosCadastradoPaciente(
         @NotBlank
         String nome,
+
         @NotBlank
         @Email
         String email,
 
         @NotBlank
-        String telefone,
+        @CPF
+        String cpf,
+
+        byte idade,
+
+        String dataNascimento,
 
 
         @NotBlank
-        @Pattern(regexp = "\\d{4,6}")
-        String crm,
-        @NotNull
-        Especialidade especialidade,
+        String telefone,
         @NotNull
         @Valid
-        DadosEndereco endereco) {
+        DadosEndereco endereco
+
+){
 }
+
+
+

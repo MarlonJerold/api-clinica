@@ -1,0 +1,1 @@
+ALTER TABLE pacientes ADD cidade VARCHAR(100);
