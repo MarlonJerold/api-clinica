@@ -1,7 +1,6 @@
-package med.vol.api.endereco;
+package med.vol.api.domain.endereco;
 
 import jakarta.validation.constraints.Pattern;
-import med.vol.api.endereco.DadosEndereco;
 import org.hibernate.validator.constraints.NotBlank;
 
 public record DadosEndereco(

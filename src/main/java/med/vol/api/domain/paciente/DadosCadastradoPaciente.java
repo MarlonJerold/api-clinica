@@ -1,14 +1,11 @@
-package med.vol.api.paciente;
+package med.vol.api.domain.paciente;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import med.vol.api.endereco.DadosEndereco;
+import med.vol.api.domain.endereco.DadosEndereco;
 import org.hibernate.validator.constraints.br.CPF;
-
-import java.text.DateFormat;
 
 
 public record DadosCadastradoPaciente(

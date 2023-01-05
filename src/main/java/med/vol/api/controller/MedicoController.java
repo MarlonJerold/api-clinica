@@ -2,10 +2,11 @@ package med.vol.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.vol.api.endereco.Endereco;
-import med.vol.api.medico.*;
+import med.vol.api.domain.medico.DadosListagemMedico;
+import med.vol.api.domain.medico.Medico;
+import med.vol.api.domain.medico.MedicoRepository;
+import med.vol.api.domain.medico.*;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +14,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("medicos")
