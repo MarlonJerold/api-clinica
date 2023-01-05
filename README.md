@@ -7,4 +7,5 @@ Até o momento a API tem as seguintes funcionalidade:
 Cadastro de médicos;
 Consulta de médicos;
 Altualização de cadastro de médicos;
-Exclusão de cadastros.
+Exclusão de cadastros;
+Cadastro de pacientes.
