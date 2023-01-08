@@ -21,7 +21,6 @@ public class MedicoController {
 
     @Autowired
     private MedicoRepository repository;
-
     @PostMapping
     @Transactional
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastradoMedico dados, UriComponentsBuilder uriBuilder){
