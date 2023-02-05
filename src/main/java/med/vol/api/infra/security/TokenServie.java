@@ -1,7 +1,6 @@
 package med.vol.api.infra.security;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.Date;
 
 @Service
 public class TokenServie {
@@ -29,8 +27,8 @@ public class TokenServie {
                     .withClaim("id", usuario.getId())
                     .withExpiresAt(dataExpiration())
                     .sign(algorithm);
-        } catch (JWTCreationException exception){
-            throw new RuntimeException("error generating token", exception);
+        }catch (JWTCreationException exception){
+            throw new RuntimeException("erro ao gerrar token jwt", exception);
         }
     }
 
@@ -48,6 +46,6 @@ public class TokenServie {
 }
 
     private Instant dataExpiration() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(8).toInstant(ZoneOffset.of("-03:00"));
     }
 }
