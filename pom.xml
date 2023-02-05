@@ -71,6 +71,13 @@
 		<artifactId>spring-security-test</artifactId>
 		<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -81,10 +88,15 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.projectlombok</groupId>
+							<groupId>org.project-lombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+
 					</excludes>
+
 				</configuration>
 			</plugin>
 		</plugins>

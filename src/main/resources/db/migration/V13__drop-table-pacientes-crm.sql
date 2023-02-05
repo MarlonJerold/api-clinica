@@ -1,0 +1,1 @@
+ALTER TABLE pacientes drop column crm;

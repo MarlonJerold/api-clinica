@@ -1,0 +1,1 @@
+alter table medicos add crm VARCHAR(100) NOT NULL;

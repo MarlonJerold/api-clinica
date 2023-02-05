@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import med.vol.api.domain.endereco.DadosEndereco;
+import med.vol.api.domain.endereco.Endereco;
 import org.hibernate.validator.constraints.br.CPF;
 
 
@@ -29,7 +30,7 @@ public record DadosCadastradoPaciente(
         String telefone,
         @NotNull
         @Valid
-        DadosEndereco endereco
+        Endereco endereco
 
 ){
 }
