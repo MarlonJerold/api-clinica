@@ -22,17 +22,15 @@ public class Paciente {
     private String dataNascimento;
     private String telefone;
     private String email;
-    private Endereco endereco;
     private String cpf;
     private String nome;
     private byte idade;
 
-    public Paciente(DadosCadastradoPaciente dados){
+public Paciente(DadosCadastradoPaciente dados){
         this.nome = dados.nome();
         this.email = dados.email();
         this.cpf = dados.cpf();
         this.telefone = dados.telefone();
-        this.endereco = new Endereco(dados.endereco());
         this.idade = dados.idade();
         this.dataNascimento = dados.dataNascimento();
     }

@@ -1,0 +1,1 @@
+alter table medicos add cidade varchar(200);

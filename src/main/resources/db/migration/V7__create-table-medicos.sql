@@ -1,4 +1,4 @@
-CREATE TABLE medicos(
+create table medicos (
 
     id bigint NOT NULL auto_increment,
     nome VARCHAR(100) NOT NULL,
@@ -11,7 +11,9 @@ CREATE TABLE medicos(
     complemento VARCHAR(100) NOT NULL,
     numero VARCHAR(20) NOT NULL,
     uf CHAR(2) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
 
     PRIMARY KEY(id)
+
 
 )

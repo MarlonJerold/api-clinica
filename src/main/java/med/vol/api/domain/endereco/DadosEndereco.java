@@ -3,9 +3,10 @@ package med.vol.api.domain.endereco;
 import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotBlank;
 
+
 public record DadosEndereco(
         @NotBlank
-        String lograudouro,
+        String logradouro,
         @NotBlank
         String bairro,
         @NotBlank

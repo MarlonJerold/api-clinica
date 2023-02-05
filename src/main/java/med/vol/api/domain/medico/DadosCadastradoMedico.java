@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.vol.api.domain.endereco.DadosEndereco;
+import med.vol.api.domain.endereco.Endereco;
 import org.hibernate.validator.constraints.NotBlank;
 
 public record DadosCadastradoMedico(
@@ -26,5 +27,5 @@ public record DadosCadastradoMedico(
         Especialidade especialidade,
         @NotNull
         @Valid
-        DadosEndereco endereco) {
+        Endereco endereco) {
 }
