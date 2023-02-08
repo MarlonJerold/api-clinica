@@ -8,6 +8,7 @@ Thinking about facilitating the scheduling of medical consultations, an api is b
 * JWT
 * Spring Boot
 * Spring Security
+* Auth0
 * Server Mysql
 * Docker
 
@@ -19,4 +20,5 @@ CreatePatientRecord | Once the request is made, the data registered as a respons
 UpdatePatientRecord | Once the request is made, the data registered as a response will be shown to the customer.
 FilterMedicalSpecialist | Once the request is made, the data registered as a response will be shown to the customer.
 
-In the future, access will be updated for any user to have access to the api.
+Once the authentication is created, however, the refresh token authentication type will be implemented.
+
