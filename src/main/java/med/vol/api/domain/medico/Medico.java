@@ -8,6 +8,12 @@ import lombok.NoArgsConstructor;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
+@NamedStoredProcedureQueries({
+@NamedStoredProcedureQuery(
+        name = "GetMedicoByEspecialidade",
+        procedureName = "GetMedicoByEspecialidade",
+        resultClasses = Medico.class)
+})
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +27,6 @@ public class Medico {
     private String email;
     private String telefone;
     private String crm;
-
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 

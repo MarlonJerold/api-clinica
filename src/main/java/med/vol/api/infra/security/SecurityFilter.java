@@ -31,7 +31,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         var autorizationHeader = request.getHeader("Authorization");
 
         if (autorizationHeader == null) {
-            throw new RuntimeException("Token não enviado");
+            throw new RuntimeException("Token não enviado Teste");
         }
 
         return autorizationHeader.replace("Bearer", "");

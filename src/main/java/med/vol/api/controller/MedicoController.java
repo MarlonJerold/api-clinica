@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -43,6 +44,8 @@ public class MedicoController {
     @GetMapping
     public ResponseEntity<Page<DadosListagemMedico>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
+
+
         return ResponseEntity.ok(page);
     }
 
@@ -66,19 +69,44 @@ public class MedicoController {
     @GetMapping("/{id}")
     public ResponseEntity detalhar(@PathVariable Long id){
         var medico = repository.getReferenceById(id);
-
         return ResponseEntity.ok(new DadosDatalhamentoMedico(medico));
     }
- //   @GetMapping("/medicos/{especialidade}")
- //   public ResponseEntity filterByEspecialidade(@PathVariable Especialidade especialidade){
-//        var medico = repository.getReferenceByEspecialidade(especialidade);
 
- //       return ResponseEntity.ok(new DadosDatalhamentoMedico((Medico) medico));
-  //  }
-    @GetMapping("/medicos/{especialidade}")
-    public List<Medico> getMedicoByEspecialidade(@RequestParam("especialidade") Especialidade especialidade){
-        return service.getMedicoByEspecialidade(especialidade);
+
+
+    @GetMapping("/{especialidade}")
+    public ResponseEntity filterByEspecialidade(@PathVariable Especialidade especialidade){
+        try {
+            Especialidade filterEspec = GetMedicoByEspecialidade(especialidade);
+
+            if (filterEspec != null) {
+                return new ResponseEntity(filterEspec, HttpStatus.OK);
+            }
+
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        }catch (Exception ex) {
+            return new ResponseEntity(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

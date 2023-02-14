@@ -46,6 +46,6 @@ public class TokenServie {
 }
 
     private Instant dataExpiration() {
-        return LocalDateTime.now().plusHours(8).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(10000).toInstant(ZoneOffset.of("-03:00"));
     }
 }
