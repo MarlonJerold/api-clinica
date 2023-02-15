@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import med.vol.api.domain.endereco.Endereco;
 import med.vol.api.domain.endereco.EnderecoRepository;
 import med.vol.api.domain.medico.*;
+import med.vol.api.service.RegisterDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,24 +22,14 @@ import java.util.List;
 public class MedicoController {
 
     @Autowired
-    private EnderecoRepository repositoryAddress;
-
-    @Autowired
-    private MedicoRepository repository;
-
-    @Autowired
     private MedicoService service;
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastradoMedico dados, UriComponentsBuilder uriBuilder){
-        var medico = new Medico(dados);
-        var endereco = new Endereco(dados.endereco());
-        repositoryAddress.save(endereco);
-        repository.save(medico);
-
-        var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
-
-        return ResponseEntity.created(uri).body(new DadosDatalhamentoMedico(medico));
+    public ResponseEntity registerDoctor(@RequestBody @Valid DadosCadastradoMedico dados, UriComponentsBuilder uriBuilder){
+        RegisterDoctor registerDoctor = new RegisterDoctor();
+        registerDoctor.registerDoctor(dados, uriBuilder);
+        var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(new Medico(dados).getId()).toUri();
+        return ResponseEntity.created(uri).body(new DadosDatalhamentoMedico(new Medico(dados)));
     }
 
     @GetMapping
