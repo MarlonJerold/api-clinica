@@ -28,11 +28,11 @@ public class Medico {
     private String telefone;
     private String crm;
     @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
+    private Specialty especialidade;
 
     private Boolean ativo;
 
-    public Medico(DadosCadastradoMedico dados) {
+    public Medico(DoctorRegisterRecord dados) {
         this.ativo = true;
         this.nome = dados.nome();
         //this.endereco = new Endereco(dados.endereco());

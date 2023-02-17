@@ -1,6 +1,6 @@
 package med.vol.api.domain.medico;
 
-public enum Especialidade {
+public enum Specialty {
 
     ORTOPEDIA ("ORTOPEDIA"),
     CARDIOLOGIA ("CARDIOLOGIA"),
@@ -11,7 +11,7 @@ public enum Especialidade {
 
     private final String esp;
 
-    Especialidade(String esp){
+    Specialty(String esp){
         this.esp = esp;
     }
 }

@@ -4,7 +4,6 @@ import jakarta.transaction.Transactional;
 
 import med.vol.api.domain.endereco.Endereco;
 import med.vol.api.domain.endereco.EnderecoRepository;
-import med.vol.api.domain.medico.DadosDatalhamentoMedico;
 import med.vol.api.domain.paciente.DadosDetalhamentoPaciente;
 import med.vol.api.domain.paciente.Paciente;
 import med.vol.api.domain.paciente.PacienteRepository;

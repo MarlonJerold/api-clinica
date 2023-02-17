@@ -4,11 +4,10 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.vol.api.domain.endereco.DadosEndereco;
 import med.vol.api.domain.endereco.Endereco;
 import org.hibernate.validator.constraints.NotBlank;
 
-public record DadosCadastradoMedico(
+public record DoctorRegisterRecord(
 
         @NotBlank
         String nome,
@@ -23,7 +22,7 @@ public record DadosCadastradoMedico(
         @Pattern(regexp = "\\d{4,6}")
         String crm,
         @NotNull
-        Especialidade especialidade,
+        Specialty especialidade,
         @NotNull
         @Valid
         Endereco endereco) {

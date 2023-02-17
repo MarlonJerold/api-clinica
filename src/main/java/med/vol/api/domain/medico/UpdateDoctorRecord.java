@@ -3,7 +3,7 @@ package med.vol.api.domain.medico;
 import jakarta.validation.constraints.NotNull;
 import med.vol.api.domain.endereco.DadosEndereco;
 
-public record DadosAtualizacaoMedico(
+public record UpdateDoctorRecord(
 
         @NotNull
         Long id,
